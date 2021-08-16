@@ -1,0 +1,18 @@
+<div class="main">
+  <div class="title">
+    <span>Music Search</span>
+  </div>
+  <div>
+    <input class="search" type="text" placeholder="Search song or artist" #input>
+  </div>
+  
+  <div class="results-list">
+      <div class="result" *ngFor="let item of youtubeResults">
+        <iframe [src]="getYoutubeVideoUrl(item)" frameborder="0" allowfullscreen></iframe>
+      </div>
+  
+      <div class="result" *ngFor="let item of spotifyResults">
+        <iframe [src]="markLinkAsSafe(item.externalLink)" frameborder="0"></iframe>
+      </div>
+  </div>
+</div>
